@@ -1,7 +1,7 @@
 import React from 'react';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { StatusType } from '../app/(tabs)/index';
 import { Order } from '../types';
-import './OrderCardStyle.css';
 
 interface OrderCardProps {
   order: Order;
@@ -17,42 +17,65 @@ const statusColors: Record<StatusType, string> = {
 
 const OrderCard: React.FC<OrderCardProps> = ({ order, status }) => {
   const fullName = `${order.billing.first_name} ${order.billing.last_name}`;
-  const lineItems = order.line_items.map(item => `${item.quantity} × ${item.name}`).join(', ');
+
   return (
-    <div
-      className="order-card"
-      style={{
-        backgroundColor: statusColors[status],
-        padding: '15px',
-        borderRadius: '10px',
-        marginBottom: '10px',
-        color: 'white',
-      }}
-    > 
-     <h2>Order #{order.id}</h2>
-      <p><strong>Date:</strong> {new Date(order.date_created).toLocaleString()}</p>
-      <p><strong>Name:</strong> {fullName}</p>
-      <p><strong>Phone:</strong> {order.billing.phone}</p>
-      <p><strong>Email:</strong> {order.billing.email}</p>
-      <p><strong>Address:</strong> {order.billing.address_1}</p>
-      
-      
-          <h3>Items:</h3>
-          <ul>
-            {order.line_items.map((item) => (
-              <li key={item.id}>
-                {item.quantity} × {item.name} — ${item.total} <br />
-                <strong>ID:</strong> {item.product_id} &nbsp;
-                <strong>Qty:</strong> {item.quantity} &nbsp;
-                <strong>Name:</strong> {item.name}
-              </li>
-            ))}
-          </ul>
-       
-      <p><strong>Note:</strong> {order.customer_note || 'None'}</p>
-      <p><strong>Total:</strong> ${order.total}</p>
-      <p><strong>Payment:</strong> {order.payment_method_title}</p>
-   
- </div>
-  )}
+    <View style={[styles.card, { backgroundColor: statusColors[status] }]}>
+      <Text style={styles.header}>Order #{order.id}</Text>
+      <Text style={styles.text}><Text style={styles.bold}>Date:</Text> {new Date(order.date_created).toLocaleString()}</Text>
+      <Text style={styles.text}><Text style={styles.bold}>Name:</Text> {fullName}</Text>
+      <Text style={styles.text}><Text style={styles.bold}>Phone:</Text> {order.billing.phone}</Text>
+      <Text style={styles.text}><Text style={styles.bold}>Email:</Text> {order.billing.email}</Text>
+      <Text style={styles.text}><Text style={styles.bold}>Address:</Text> {order.billing.address_1}</Text>
+
+      <Text style={[styles.text, styles.sectionHeader]}>Items:</Text>
+      <FlatList
+        data={order.line_items}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <Text style={styles.text}>
+            {item.quantity} × {item.name} — ${item.total}{'\n'}
+            <Text style={styles.itemDetail}><Text style={styles.bold}>ID:</Text> {item.product_id} &nbsp;</Text>
+            <Text style={styles.itemDetail}><Text style={styles.bold}>Qty:</Text> {item.quantity} &nbsp;</Text>
+            <Text style={styles.itemDetail}><Text style={styles.bold}>Name:</Text> {item.name}</Text>
+          </Text>
+        )}
+      />
+
+      <Text style={styles.text}><Text style={styles.bold}>Note:</Text> {order.customer_note || 'None'}</Text>
+      <Text style={styles.text}><Text style={styles.bold}>Total:</Text> ${order.total}</Text>
+      <Text style={styles.text}><Text style={styles.bold}>Payment:</Text> {order.payment_method_title}</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  card: {
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 10,
+    color: 'white',
+  },
+  header: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+    marginBottom: 10,
+  },
+  text: {
+    color: 'white',
+    marginBottom: 4,
+  },
+  bold: {
+    fontWeight: 'bold',
+  },
+  itemDetail: {
+    color: 'white',
+  },
+  sectionHeader: {
+    marginTop: 10,
+    marginBottom: 4,
+    fontWeight: 'bold',
+  },
+});
+
 export default OrderCard;
