@@ -1,50 +1,52 @@
-# Welcome to your Expo app 👋
+# 🛒 e-NOMmerce
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![React Native](https://img.shields.io/badge/built%20with-React%20Native-61DAFB)
+![WooCommerce API](https://img.shields.io/badge/woocommerce-api-orange)
+![Platform](https://img.shields.io/badge/platform-android%20%7C%20ios%20%7C%20web-green)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 
-## Get started
+**A fast, mobile-frienldy Woocommerce Orders App**  
+e-NOMmerce syncs WooCommerce orders every few minutes—offering a real-time alternative to the official WooCommerce app’s 30-minute delay.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+<details>
+<summary>🚀 Features</summary>
 
-2. Start the app
+- 🔄 **Fast Order Syncing** – Refreshes orders every few minutes
+- 🔐 **Secure API Integration** – WooCommerce REST API via `.env`
+- ⚡ **Lightweight UI** – Designed for speed and simplicity
+- ☁️ **Free Web Deployment** via Expo
 
-   ```bash
-   npx expo start
-   ```
+</details>
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+<details>
+<summary>📦 Tech Stack</summary>
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **React Native**
+- **React Navigation**
+- **WooCommerce REST API**
+- **Axios**
+- **Dotenv**
+- **AsyncStorage**
 
-## Get a fresh project
+</details>
 
-When you're ready, run:
+---
 
+<details>
+<summary>🛠️ Installation & Setup</summary>
+
+### Requirements
+- Node.js
+- React Native CLI or Expo CLI
+- WooCommerce API credentials
+- Android/iOS emulator or device
+
+### 1. Clone the Repo
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+git clone https://github.com/TheReverend9/e-NOMmerce.git
+cd e-NOMmerce
