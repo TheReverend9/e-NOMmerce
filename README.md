@@ -9,8 +9,10 @@
 **A fast, mobile-friendly WooCommerce Orders App**  
 e-NOMmerce syncs WooCommerce orders every few minutes—offering a real-time alternative to the official WooCommerce app’s 30-minute delay.
 
+Check below for instructions on how to setup the web application using EAS or a local device.
+
 <details>
-<summary>## 🚀 Features</summary>
+<summary>🚀 Features</summary>
 
 - 🔄 **Fast Order Syncing** – Refreshes orders every few minutes  
 - 🔐 **Secure API Input** – Enter your WooCommerce credentials directly in the app, no `.env` file required  
@@ -19,7 +21,7 @@ e-NOMmerce syncs WooCommerce orders every few minutes—offering a real-time alt
 </details>
 
 <details>
-<summary>## 🔐 WooCommerce Credentials</summary>
+<summary>🔐 WooCommerce Credentials</summary>
 
 When you first open the app, you’ll be prompted to enter your WooCommerce credentials:
 
@@ -38,17 +40,14 @@ Consumer Secret:
 </details>
 
 <details>
-<summary>## 📦 Tech Stack</summary>
+<summary>📦 Tech Stack</summary>
 
 - **React Native** (via Expo)  
-- **React Navigation**  
 - **WooCommerce REST API**  
-- **Axios**  
-- **AsyncStorage**  
 </details>
 
 <details>
-<summary>## 🛠️ Installation & Setup</summary>
+<summary>🛠️ Installation & Setup</summary>
 
 ### Requirements
 
@@ -79,7 +78,7 @@ npx expo start --web
 </details>
 
 <details>
-<summary>## ☁️ EAS Deployment</summary>
+<summary>☁️ EAS Deployment</summary>
 
 You can build and deploy your app using [Expo Application Services (EAS)](https://expo.dev/eas).
 
@@ -146,4 +145,4 @@ npx eas deploy --prod
 You can then visit the site using the Production URL
 </details>
 
-👨‍💻 Built with ❤️ by Kevin @TheReverend9 and Jasmine @JCastillo-webdesign
+👨‍💻 Built with ❤️ by Kevin [@TheReverend9](https://github.com/TheReverend9) and Jasmine [@JCastillo-webdesign](https://github.com/JCastillo-webdesign)
