@@ -9,36 +9,46 @@
 **A fast, mobile-friendly WooCommerce Orders App**  
 e-NOMmerce syncs WooCommerce orders every few minutes—offering a real-time alternative to the official WooCommerce app’s 30-minute delay.
 
-## 🚀 Features
+<details>
+<summary>## 🚀 Features</summary>
 
 - 🔄 **Fast Order Syncing** – Refreshes orders every few minutes  
 - 🔐 **Secure API Input** – Enter your WooCommerce credentials directly in the app, no `.env` file required  
 - ⚡ **Lightweight UI** – Designed for speed and simplicity  
 - ☁️ **Free Web Deployment** via Expo  
+</details>
 
-## 🔐 WooCommerce Credentials
+<details>
+<summary>## 🔐 WooCommerce Credentials</summary>
 
 When you first open the app, you’ll be prompted to enter your WooCommerce credentials:
 
 🔐 Enter WooCommerce Credentials
 API URL (e.g. https://your-website.com/wp-json/wc/v3)
+
 Consumer Key:
+
 Consumer Secret:
+
 [✓] Remember these credentials on this device
 
 - Credentials are stored **locally and unencrypted** in your browser’s storage or mobile device storage if you check "Remember these credentials."
 - A **"Clear API Credentials"** button is available in the top right corner of the app to manually remove saved credentials at any time.
 - This feature is convenient, but ⚠️ we recommend not using "remember" on shared or public devices.
+</details>
 
-## 📦 Tech Stack
+<details>
+<summary>## 📦 Tech Stack</summary>
 
 - **React Native** (via Expo)  
 - **React Navigation**  
 - **WooCommerce REST API**  
 - **Axios**  
 - **AsyncStorage**  
+</details>
 
-## 🛠️ Installation & Setup
+<details>
+<summary>## 🛠️ Installation & Setup</summary>
 
 ### Requirements
 
@@ -66,10 +76,13 @@ npm install
 ```bash
 npx expo start --web
 ```
+</details>
 
-## ☁️ EAS Deployment
+<details>
+<summary>## ☁️ EAS Deployment</summary>
 
 You can build and deploy your app using [Expo Application Services (EAS)](https://expo.dev/eas).
+
 
 ### 1. 📋 Create an Expo Account
 
@@ -131,6 +144,6 @@ This will generate a static export of your web application in the ***dist*** fol
 npx eas deploy --prod
 ```
 You can then visit the site using the Production URL
-
+</details>
 
 👨‍💻 Built with ❤️ by Kevin @TheReverend9 and Jasmine @JCastillo-webdesign
