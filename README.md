@@ -52,15 +52,20 @@ Consumer Secret:
 ```bash
 git clone https://github.com/TheReverend9/e-NOMmerce.git
 cd e-NOMmerce
+```
 
 ### 2. Install Dependencies
+
 ```bash
 npm install
+```
 
 ### 3. Start the App
 
 **To run the app in your web browser**
+```bash
 npx expo start --web
+```
 
 ## ☁️ EAS Deployment
 
@@ -75,11 +80,13 @@ To use EAS, you’ll need an Expo account.
 
 ```bash
 npx expo register
+```
 
 ### 2. 🔑 Log In to Your Expo Account
 
 ```bash
 npx expo login
+```
 Follow the prompts to enter your Expo username and password.
 
 ### 3. 🏗️ Initialize EAS in Your Project
@@ -87,6 +94,7 @@ Follow the prompts to enter your Expo username and password.
 Inside your project folder, run:
 ```bash
 npx eas init
+```
 This will generate an eas.json file in your root directory and help you configure your first EAS build.
 
 Example eas.json structure:
@@ -108,18 +116,20 @@ Example eas.json structure:
     }
   }
 }
-
+```
 You can tweak these settings later based on your platform and workflow preferences.
 
 ### 4. 🔨 Build the App for EAS
 
 ```bash
 npx expo export --platform web
+```
 This will generate a static export of your web application in the ***dist*** folder.
 
 ### 5. 📲 Publish the Production Build to EAS Servers
-
-``` npx eas deploy --prod
+```bash
+npx eas deploy --prod
+```
 You can then visit the site using the Production URL
 
 
