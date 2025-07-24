@@ -1,50 +1,154 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
 
-1. Install dependencies
+https://github.com/user-attachments/assets/d9fb6457-3e3c-4812-a160-ce01a55e59a2
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
+# 🛒 e-NOMmerce
 
-   ```bash
-   npx expo start
-   ```
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![React Native](https://img.shields.io/badge/built%20with-React%20Native-61DAFB)
+![WooCommerce API](https://img.shields.io/badge/woocommerce-api-orange)
+![Platform](https://img.shields.io/badge/platform-android%20%7C%20ios%20%7C%20web-green)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 
-In the output, you'll find options to open the app in a
+**A fast, mobile-friendly WooCommerce Orders App**  
+e-NOMmerce syncs WooCommerce orders every few minutes—offering a real-time alternative to the official WooCommerce app’s 30-minute delay.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Check below for instructions on how to setup the web application using EAS or a local device.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+<details>
+<summary>🚀 Features</summary>
 
-## Get a fresh project
+- 🔄 **Fast Order Syncing** – Refreshes orders every few minutes  
+- 🔐 **Secure API Input** – Enter your WooCommerce credentials directly in the app, no `.env` file required  
+- ⚡ **Lightweight UI** – Designed for speed and simplicity  
+- ☁️ **Free Web Deployment** via Expo  
+</details>
 
-When you're ready, run:
+<details>
+<summary>🔐 WooCommerce Credentials</summary>
+
+When you first open the app, you’ll be prompted to enter your WooCommerce credentials:
+
+🔐 Enter WooCommerce Credentials
+API URL (e.g. https://your-website.com/wp-json/wc/v3)
+
+Consumer Key:
+
+Consumer Secret:
+
+[✓] Remember these credentials on this device
+
+- Credentials are stored **locally and unencrypted** in your browser’s storage or mobile device storage if you check "Remember these credentials."
+- A **"Clear API Credentials"** button is available in the top right corner of the app to manually remove saved credentials at any time.
+- This feature is convenient, but ⚠️ we recommend not using "remember" on shared or public devices.
+</details>
+
+<details>
+<summary>📦 Tech Stack</summary>
+
+- **React Native** (via Expo)  
+- **WooCommerce REST API**  
+</details>
+
+<details>
+<summary>🛠️ Installation & Setup</summary>
+
+### Requirements
+
+- Node.js  
+- Expo CLI (`npm install -g expo-cli`)  
+- WooCommerce site with REST API enabled  
+- Android/iOS emulator or physical device (or a browser for web)  
+
+### 1. Clone the Repo
 
 ```bash
-npm run reset-project
+git clone https://github.com/TheReverend9/e-NOMmerce.git
+cd e-NOMmerce
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Start the App
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**To run the app in your web browser**
+```bash
+npx expo start --web
+```
+</details>
 
-## Join the community
+<details>
+<summary>☁️ EAS Deployment</summary>
 
-Join our community of developers creating universal apps.
+You can build and deploy your app using [Expo Application Services (EAS)](https://expo.dev/eas).
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+### 1. 📋 Create an Expo Account
+
+To use EAS, you’ll need an Expo account.
+
+- Sign up at: [https://expo.dev/signup](https://expo.dev/signup)  
+- Or from the command line:
+
+```bash
+npx expo register
+```
+
+### 2. 🔑 Log In to Your Expo Account
+
+```bash
+npx expo login
+```
+Follow the prompts to enter your Expo username and password.
+
+### 3. 🏗️ Initialize EAS in Your Project
+
+Inside your project folder, run:
+```bash
+npx eas init
+```
+This will generate an eas.json file in your root directory and help you configure your first EAS build.
+
+Example eas.json structure:
+```json
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {},
+    "production": {
+      "android": {
+        "workflow": "managed"
+      },
+      "ios": {
+        "workflow": "managed"
+      }
+    }
+  }
+}
+```
+You can tweak these settings later based on your platform and workflow preferences.
+
+### 4. 🔨 Build the App for EAS
+
+```bash
+npx expo export --platform web
+```
+This will generate a static export of your web application in the ***dist*** folder.
+
+### 5. 📲 Publish the Production Build to EAS Servers
+```bash
+npx eas deploy --prod
+```
+You can then visit the site using the Production URL
+</details>
+
+👨‍💻 Built with ❤️ by Kevin [@TheReverend9](https://github.com/TheReverend9) and Jasmine [@JCastillo-webdesign](https://github.com/JCastillo-webdesign)
